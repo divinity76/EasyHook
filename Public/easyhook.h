@@ -35,9 +35,12 @@
 	typedef void* HMODULE;
 
 #else
-
-    #define NTDDI_VERSION           NTDDI_WIN2KSP4
-    #define _WIN32_WINNT            0x500
+    #ifndef NTDDI_VERSION
+        #define NTDDI_VERSION           NTDDI_WIN2KSP4
+    #endif
+    #ifndef _WIN32_WINNT
+        #define _WIN32_WINNT            0x500
+    #endif
     #define _WIN32_IE_              _WIN32_IE_WIN2KSP4
 
     #include <windows.h>
